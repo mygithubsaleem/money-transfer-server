@@ -46,7 +46,7 @@ router.post("/addnewuserpostman", async (req, res) => {
 router.post("/addnewuserfromrouter", async (req, res) => {
 	try {
 		const datafromrouter = {
-			name: "akram jameel from router",
+			name: "router1",
 			status: "receiver",
 			email: "akram@gmail.com",
 			password: "akram123",
@@ -98,10 +98,11 @@ router.put("/updateuser/:userid", async (req, res) => {
 });
 
 router.delete("/deleteuser", async (req, res) => {
-	const deletedName = "baqir";
+	const deletedName = "akram jameel from router";
 	try {
 		const deletedUser = await users.deleteOne({ name: deletedName });
 		res.status(200).json(deletedUser);
+		console.log("here is deleted user...", deletedUser);
 	} catch (error) {
 		console.log("internel server error", error);
 		res.status(500).send({ message: error });
@@ -119,6 +120,7 @@ router.delete("/deleteselecteduser/:delname", async (req, res) => {
 		res.status(300).send({ error });
 	}
 });
+//jlkjlkjlklk
 router.get("/getusertype/:usertype", async (req, res) => {
 	try {
 		const usertype = req.params.usertype;

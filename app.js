@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 const mongoose = require("mongoose");
 const PORT = process.env.PORT;
-const DB = process.env.donordb;
+// const DB = process.env.donordb;
 // app.use(bodyParser.json()); //req.body
 require("./db/funddbcon");
 const users = require("./model/userSchema");
@@ -21,11 +21,11 @@ app.get("/", (req, res) => {
 	console.log("i am  home page app..js.");
 });
 
-const middleware = (req, res, next) => {
-	console.log(" i am middle ware function..fund fund fund ...app js.");
-	res.send("i am middle ware from app.js");
-	next();
-};
+// const middleware = (req, res, next) => {
+// 	console.log(" i am middle ware function..fund fund fund ...app js.");
+// 	res.send("i am middle ware from app.js");
+// 	next();
+// };
 
 // app.get("/about", middleware, (req, res) => {
 // 	res.send("About page fund...app js");
@@ -35,5 +35,5 @@ const middleware = (req, res, next) => {
 // 	console.log("Server is running at port 3000 fund fund fund....");
 // });
 app.listen(PORT, () => {
-	console.log("Server is running at portfund fund fund", { PORT });
+	console.log("Server is running at port fund fund fund....", { PORT });
 });
